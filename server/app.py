@@ -4,7 +4,7 @@ from flask_migrate import Migrate
 
 # we will need to import our models and db here for everything to work
 # (luckily we already have Deli)
-from models import db, Deli
+from models import db, DeliSandwich
 
 # this is our flask application!
 app = Flask(__name__)
@@ -22,6 +22,7 @@ db.init_app(app)
 def index():
     return "More goes here when we're in phase 4..."
 
+# DELIS ROUTE
 # @app.get('/delis')
 # def get_delis():
 #     delis = Deli.query.all()

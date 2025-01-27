@@ -11,5 +11,24 @@ metadata = MetaData(naming_convention={
 db = SQLAlchemy(metadata=metadata)
 
 # this will eventually become our Deli model
-class Deli(db.Model):
-    pass
+class DeliSandwich(db.Model):
+    
+    __tablename__ = "deli_sandwiches_table"
+
+    id = db.Column( db.Integer, primary_key=True )
+    name = db.Column( db.String )
+    toasted = db.Column( db.Boolean )
+    ingredients = db.Column( db.String )
+    price = db.Column( db.Float )
+    is_kosher = db.Column( db.Boolean )
+
+
+class Pizza(db.Model):
+
+    __tablename__ = "pizzas_table"
+
+    id = db.Column( db.Integer, primary_key=True )
+    name = db.Column( db.String )
+    size_in_inches = db.Column( db.Integer )
+    crust = db.Column( db.String )
+    meta_pizza = db.Column( db.Boolean )
